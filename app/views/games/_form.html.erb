@@ -1,3 +1,23 @@
+<body>
+  <style>
+    body {background-color: #2c2f33;}
+
+    h2 {
+      color: #FFFFFF;
+    }
+
+    h4 {
+      color: #FFFFFF;
+    }
+
+    attributes {
+      padding-left: 10px;
+    }
+    
+  </style>
+</body>
+
+
 <%= form_with(model: game) do |form| %>
   <% if game.errors.any? %>
     <div id="error_explanation">
@@ -12,27 +32,28 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
+    <h4>Title: </h4>
     <%= form.text_field :title %>
   </div>
 
   <div class="field">
-    <%= form.label :rating %>
+    <h4>Rating: </h4>
     <%= form.number_field :rating %>
   </div>
 
   <div class="field">
-    <%= form.label :hours %>
+    <h4>Hours Played: </h4>
     <%= form.number_field :hours %>
   </div>
 
   <div class="field">
-    <%= form.label :review %>
+    <h4>Review: </h4>
     <%= form.text_area :review %>
   </div>
 
   <div class="actions">
     <%= form.submit %>
   </div>
+  
 <% end %>
 

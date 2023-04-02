@@ -1,24 +1,49 @@
-<p id="notice"><%= notice %></p>
+<head>
+  <style>
+    body {background-color: #2c2f33;}
 
-<p>
-  <strong>Title:</strong>
+    h2 {
+      color: #FFFFFF;
+      font-size: 30px;
+      padding-left: 10px;
+    }
+  </style>
+</head>
+
+<!-- Bar at top of page -->
+<nav class="navbar navbar-expand-lg" style="background-color: #7825aa;">
+
+  <!-- Website Name that is also a button -->
+  <a class="navbar-brand" style="color: #FFFFFF" href="http://localhost:3000/games">My Game List</a>
+  </button>
+
+</nav>
+
+<!-- This is the notice if the action was successful or failed -->
+<h2 id="notice" class="text-white" style="font-size: 20px;"><%= notice %></p>
+
+<br>
+
+<h2>
   <%= @game.title %>
-</p>
+</h2>
 
-<p>
-  <strong>Rating:</strong>
+<h2>
   <%= @game.rating %>
-</p>
+  <strong>/ 10</strong>
+</h2>
 
-<p>
-  <strong>Hours:</strong>
+<h2>
+  <strong>Hours Played:</strong>
   <%= @game.hours %>
-</p>
+</h2>
 
-<p>
+<h2>
   <strong>Review:</strong>
   <%= @game.review %>
-</p>
+</h2>
 
-<%= link_to 'Edit', edit_game_path(@game) %> |
-<%= link_to 'Back', games_path %>
+<br>
+
+<%= link_to 'Edit', edit_game_path(@game), class: "btn text-white", style: "background-color: #2546f0;" %> |
+<%= link_to 'Back', games_path, class: "btn btn-secondary text-white" %>
