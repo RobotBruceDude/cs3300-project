@@ -11,6 +11,35 @@
   </head>
 
   <body>
-    <%= yield %>
+  <!-- Quick Navigation to different parts of the website -->
+  <nav class="navbar navbar-expand-lg" style="background-color: #7825aa; padding-left: 20px;">
+  
+    <!-- Website Name that is also a button -->
+    <a class="navbar-brand" style="color: #FFFFFF" href="http://localhost:3000/games">My Game List</a>
+
+    <div class="nav">
+      <% if user_signed_in? %>
+        <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-brand link-light' %> 
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-brand link-light'  %>
+      <% else %>
+        <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-brand link-light' %> 
+        <%= link_to "Login", new_user_session_path, :class => 'navbar-brand link-light'  %>
+      <% end %>
+    </div>
+  </nav>
+
+  <% if user_signed_in? %>
+    <h5 class = "text-white">
+    Logged in as: <strong><%= current_user.email %></strong> 
+    </h5>
+    <% end %>
+
+  <%= yield %>
+  <br>
+  <br>
+  <p id="notice", class="text-white", style="font-size: 20px" ><%= notice %></p>
+  
+
+
   </body>
 </html>

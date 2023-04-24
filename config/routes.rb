@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   #This reroutes the main page from rails to our 
   root "games#index"
   resources :games
