@@ -1,3 +1,14 @@
+<head>
+<style>
+
+body {background-color: #2c2f33;}
+
+p {class = "text-white"}
+
+</style>
+</head>
+
+
 <p>Hello <%= @email %>!</p>
 
 <% if @resource.try(:unconfirmed_email?) %>

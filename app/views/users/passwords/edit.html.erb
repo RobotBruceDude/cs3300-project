@@ -1,3 +1,14 @@
+<head>
+<style>
+
+body {background-color: #2c2f33;}
+
+h2 (class = "text-white")
+field {class = "text-white"}
+
+</style>
+</head>
+
 <h2>Change your password</h2>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
@@ -17,7 +28,7 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
-  <div class="actions">
+  <div class="btn btn-primary">
     <%= f.submit "Change my password" %>
   </div>
 <% end %>
