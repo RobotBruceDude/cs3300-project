@@ -8,7 +8,11 @@ describe "Creating new game article", :type => :model do
       expect(game.valid?).to eq(false)
     end
     it "Error with no rating" do
-      game = Game.new(title: "title", hours: "2", review: "text")
+      game = Game.new(title: "title", hours: "2", review: "text" )
+      expect(game.save).to eq(false)
+    end
+    it "Error with out of range rating" do
+      game = Game.new(title: "title", rating: "15", review: "text" )
       expect(game.save).to eq(false)
     end
     it "Error with hours" do
